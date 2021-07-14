@@ -20,6 +20,7 @@ services:
       - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093
       - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka1:9092,EXTERNAL://localhost:9093
       - KAFKA_INTER_BROKER_LISTENER_NAME=CLIENT
+      - KAFKA_CREATE_TOPICS="input:2:1, output:2:1"
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
     depends_on:
       - zookeeper
@@ -79,3 +80,4 @@ services:
       - "kafka2"
       - "kafka3"
       - "zookeeper"
+
